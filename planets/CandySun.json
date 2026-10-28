@@ -1,0 +1,20 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Outer-Wilds-New-Horizons/new-horizons/main/NewHorizons/Schemas/body_schema.json",
+    "name": "Cotton Candy Sun",
+    "starSystem": "CandyWorld",
+    "Base": {
+        "centerOfSolarSystem": true,
+        "surfaceSize": 2000,
+        "surfaceGravity": 30,
+        "gravityFallOff": "inverseSquared"
+    },
+    "Star": {
+        "size": 2000,
+        "tint": { "r": 255, "g": 140, "b": 210, "a": 255 },
+        "lightTint": { "r": 255, "g": 215, "b": 235, "a": 255 },
+        "solarLuminosity": 1,
+        "lifespan": 22
+    },
+    "Orbit": { "isStatic": true },
+    "MapMarker": { "enabled": true }
+}

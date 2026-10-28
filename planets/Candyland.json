@@ -1,0 +1,3464 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Outer-Wilds-New-Horizons/new-horizons/main/NewHorizons/Schemas/body_schema.json",
+    "name": "Candyland",
+    "starSystem": "CandyWorld",
+    "Base": {
+        "surfaceSize": 215,
+        "surfaceGravity": 10
+    },
+    "Orbit": {
+        "primaryBody": "Cotton Candy Sun",
+        "semiMajorAxis": 10000,
+        "siderealPeriod": 8,
+        "axialTilt": 15
+    },
+    "HeightMap": {
+        "heightMap": "planets/candyland/terrain/heightmap.png",
+        "textureMap": "planets/candyland/terrain/texture.png",
+        "smoothnessMap": "planets/candyland/terrain/smoothness.png",
+        "minHeight": 200,
+        "maxHeight": 222,
+        "resolution": 600,
+        "tileBlendMap": "planets/candyland/terrain/tileblend.png",
+        "baseTile": {
+            "size": 3,
+            "textureTile": "planets/candyland/tiles/grass_tile.png",
+            "normalTile": "planets/candyland/tiles/grass_normal.png",
+            "normalStrength": 0.8
+        },
+        "redTile": {
+            "size": 3,
+            "textureTile": "planets/candyland/tiles/plain_tile.png"
+        }
+    },
+    "Water": {
+        "size": 206.5,
+        "tint": {
+            "r": 125,
+            "g": 72,
+            "b": 40,
+            "a": 255
+        },
+        "density": 1.6
+    },
+    "Atmosphere": {
+        "size": 320,
+        "hasOxygen": true,
+        "hasTrees": true,
+        "useAtmosphereShader": true,
+        "atmosphereTint": {
+            "r": 255,
+            "g": 150,
+            "b": 210,
+            "a": 255
+        },
+        "fogSize": 300,
+        "fogDensity": 0.15,
+        "fogTint": {
+            "r": 255,
+            "g": 190,
+            "b": 225,
+            "a": 255
+        }
+    },
+    "Spawn": {
+        "playerSpawnPoints": [
+            {
+                "position": {
+                    "x": 34.437,
+                    "y": 217.425,
+                    "z": 0.0
+                },
+                "alignRadial": true,
+                "isDefault": true,
+                "startInShip": true
+            }
+        ],
+        "shipSpawnPoints": [
+            {
+                "position": {
+                    "x": 44.287,
+                    "y": 217.676,
+                    "z": 0.0
+                },
+                "alignRadial": true,
+                "isDefault": true
+            }
+        ]
+    },
+    "MapMarker": {
+        "enabled": true
+    },
+    "Props": {
+        "scatter": [
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/CandyCane/CandyCane.prefab",
+                "count": 250,
+                "minHeight": 208.5,
+                "seed": 42,
+                "rotation": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "keepLoaded": true,
+                "maxHeight": 217.5
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyTree_A.prefab",
+                "count": 130,
+                "minHeight": 208.0,
+                "seed": 100,
+                "keepLoaded": true,
+                "maxHeight": 217.5
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyTree_B.prefab",
+                "count": 110,
+                "minHeight": 208.0,
+                "seed": 101,
+                "keepLoaded": true,
+                "maxHeight": 217.5
+            }
+        ],
+        "details": [
+            {
+                "rename": "CandyHouse",
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyHouse.prefab",
+                "position": {
+                    "x": 0.0,
+                    "y": 218.935,
+                    "z": 0.0
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "alignRadial": false,
+                "keepLoaded": true
+            },
+            {
+                "rename": "CandyVault",
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyVault.prefab",
+                "position": {
+                    "x": 0.0,
+                    "y": 218.935,
+                    "z": 0.0
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "alignRadial": false
+            },
+            {
+                "rename": "CandyVault_Trapdoor",
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyTrapdoor.prefab",
+                "position": {
+                    "x": 0.0,
+                    "y": 218.935,
+                    "z": 0.0
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "alignRadial": false,
+                "deactivationCondition": "CANDY_VAULT_OPEN"
+            },
+            {
+                "rename": "CandyAltar_1",
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyPedestal.prefab",
+                "position": {
+                    "x": 2.687,
+                    "y": 218.935,
+                    "z": 2.687
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "alignRadial": false,
+                "itemSocket": {
+                    "itemType": "CandyTablet",
+                    "isRelativeToParent": true,
+                    "position": {
+                        "x": 0.0,
+                        "y": 1.12,
+                        "z": 0.0
+                    },
+                    "interactRange": 3.0,
+                    "colliderRadius": 1.5,
+                    "insertCondition": "CANDY_SLOT_1"
+                }
+            },
+            {
+                "rename": "CandySlotLollipop_1",
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyLollipop_red.prefab",
+                "position": {
+                    "x": 3.818,
+                    "y": 218.935,
+                    "z": 3.818
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": -135.0,
+                    "z": 0.0
+                },
+                "alignRadial": false,
+                "activationCondition": "CANDY_SLOT_1"
+            },
+            {
+                "rename": "CandyAltar_2",
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyPedestal.prefab",
+                "position": {
+                    "x": -2.687,
+                    "y": 218.935,
+                    "z": 2.687
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "alignRadial": false,
+                "itemSocket": {
+                    "itemType": "CandyTablet",
+                    "isRelativeToParent": true,
+                    "position": {
+                        "x": 0.0,
+                        "y": 1.12,
+                        "z": 0.0
+                    },
+                    "interactRange": 3.0,
+                    "colliderRadius": 1.5,
+                    "insertCondition": "CANDY_SLOT_2"
+                }
+            },
+            {
+                "rename": "CandySlotLollipop_2",
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyLollipop_yellow.prefab",
+                "position": {
+                    "x": -3.818,
+                    "y": 218.935,
+                    "z": 3.818
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 135.0,
+                    "z": 0.0
+                },
+                "alignRadial": false,
+                "activationCondition": "CANDY_SLOT_2"
+            },
+            {
+                "rename": "CandyAltar_3",
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyPedestal.prefab",
+                "position": {
+                    "x": -2.687,
+                    "y": 218.935,
+                    "z": -2.687
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "alignRadial": false,
+                "itemSocket": {
+                    "itemType": "CandyTablet",
+                    "isRelativeToParent": true,
+                    "position": {
+                        "x": 0.0,
+                        "y": 1.12,
+                        "z": 0.0
+                    },
+                    "interactRange": 3.0,
+                    "colliderRadius": 1.5,
+                    "insertCondition": "CANDY_SLOT_3"
+                }
+            },
+            {
+                "rename": "CandySlotLollipop_3",
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyLollipop_purple.prefab",
+                "position": {
+                    "x": -3.818,
+                    "y": 218.935,
+                    "z": -3.818
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 45.0,
+                    "z": 0.0
+                },
+                "alignRadial": false,
+                "activationCondition": "CANDY_SLOT_3"
+            },
+            {
+                "rename": "CandyAltar_4",
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyPedestal.prefab",
+                "position": {
+                    "x": 2.687,
+                    "y": 218.935,
+                    "z": -2.687
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "alignRadial": false,
+                "itemSocket": {
+                    "itemType": "CandyTablet",
+                    "isRelativeToParent": true,
+                    "position": {
+                        "x": 0.0,
+                        "y": 1.12,
+                        "z": 0.0
+                    },
+                    "interactRange": 3.0,
+                    "colliderRadius": 1.5,
+                    "insertCondition": "CANDY_SLOT_4"
+                }
+            },
+            {
+                "rename": "CandySlotLollipop_4",
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyLollipop_green.prefab",
+                "position": {
+                    "x": 3.818,
+                    "y": 218.935,
+                    "z": -3.818
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": -45.0,
+                    "z": 0.0
+                },
+                "alignRadial": false,
+                "activationCondition": "CANDY_SLOT_4"
+            },
+            {
+                "rename": "CandyTablet_red",
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyTablet_red.prefab",
+                "position": {
+                    "x": -207.22,
+                    "y": 55.271,
+                    "z": 5.833
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "alignRadial": true,
+                "item": {
+                    "name": "Heart Tablet",
+                    "itemType": "CandyTablet",
+                    "colliderRadius": 0.5,
+                    "interactRange": 2.5,
+                    "droppable": true
+                }
+            },
+            {
+                "rename": "CandyTablet_yellow",
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyTablet_yellow.prefab",
+                "position": {
+                    "x": 210.988,
+                    "y": -12.695,
+                    "z": 33.065
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "alignRadial": true,
+                "item": {
+                    "name": "Star Tablet",
+                    "itemType": "CandyTablet",
+                    "colliderRadius": 0.5,
+                    "interactRange": 2.5,
+                    "droppable": true
+                }
+            },
+            {
+                "rename": "CandyTablet_choc",
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyTablet_choc.prefab",
+                "position": {
+                    "x": 0.0,
+                    "y": -220.155,
+                    "z": 0.0
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "alignRadial": true,
+                "item": {
+                    "name": "Chocolate Tablet",
+                    "itemType": "CandyTablet",
+                    "colliderRadius": 0.5,
+                    "interactRange": 2.5,
+                    "droppable": true
+                }
+            },
+            {
+                "rename": "CandyTablet_green",
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyTablet_green.prefab",
+                "position": {
+                    "x": -9.774,
+                    "y": 0.337,
+                    "z": -219.558
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "alignRadial": true,
+                "item": {
+                    "name": "Sweetie Tablet",
+                    "itemType": "CandyTablet",
+                    "colliderRadius": 0.5,
+                    "interactRange": 2.5,
+                    "droppable": true
+                }
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyPebble_red.prefab",
+                "position": {
+                    "x": -210.424,
+                    "y": 37.328,
+                    "z": -18.333
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 255.528,
+                    "z": 0.0
+                },
+                "scale": 3.83,
+                "rename": "Grove_0"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyPebble_blue.prefab",
+                "position": {
+                    "x": -211.745,
+                    "y": 31.212,
+                    "z": -14.058
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 353.092,
+                    "z": 0.0
+                },
+                "scale": 3.87,
+                "rename": "Grove_1"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyPebble_green.prefab",
+                "position": {
+                    "x": -212.681,
+                    "y": 24.605,
+                    "z": -13.007
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 344.976,
+                    "z": 0.0
+                },
+                "scale": 2.99,
+                "rename": "Grove_2"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyPebble_orange.prefab",
+                "position": {
+                    "x": -213.479,
+                    "y": 18.433,
+                    "z": -9.721
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 241.941,
+                    "z": 0.0
+                },
+                "scale": 3.14,
+                "rename": "Grove_3"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyPebble_purple.prefab",
+                "position": {
+                    "x": -214.055,
+                    "y": 12.832,
+                    "z": -4.837
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 307.39,
+                    "z": 0.0
+                },
+                "scale": 3.16,
+                "rename": "Grove_4"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyPebble_green.prefab",
+                "position": {
+                    "x": -212.779,
+                    "y": 14.086,
+                    "z": 23.121
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 66.518,
+                    "z": 0.0
+                },
+                "scale": 3.18,
+                "rename": "Grove_5"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyPebble_orange.prefab",
+                "position": {
+                    "x": -211.722,
+                    "y": 17.458,
+                    "z": 29.608
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 158.902,
+                    "z": 0.0
+                },
+                "scale": 3.38,
+                "rename": "Grove_6"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyPebble_purple.prefab",
+                "position": {
+                    "x": -210.601,
+                    "y": 24.02,
+                    "z": 32.835
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.095,
+                    "z": 0.0
+                },
+                "scale": 3.55,
+                "rename": "Grove_7"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyPebble_pink.prefab",
+                "position": {
+                    "x": -209.565,
+                    "y": 30.981,
+                    "z": 33.624
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 274.057,
+                    "z": 0.0
+                },
+                "scale": 3.6,
+                "rename": "Grove_8"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyPebble_red.prefab",
+                "position": {
+                    "x": -208.108,
+                    "y": 37.347,
+                    "z": 36.11
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 68.77,
+                    "z": 0.0
+                },
+                "scale": 3.53,
+                "rename": "Grove_9"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyPebble_blue.prefab",
+                "position": {
+                    "x": -206.745,
+                    "y": 44.383,
+                    "z": 35.976
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 260.56,
+                    "z": 0.0
+                },
+                "scale": 3.12,
+                "rename": "Grove_10"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyPebble_green.prefab",
+                "position": {
+                    "x": -206.049,
+                    "y": 50.298,
+                    "z": 31.96
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 138.236,
+                    "z": 0.0
+                },
+                "scale": 3.74,
+                "rename": "Grove_11"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyPebble_orange.prefab",
+                "position": {
+                    "x": -205.675,
+                    "y": 54.686,
+                    "z": 26.742
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 230.936,
+                    "z": 0.0
+                },
+                "scale": 3.09,
+                "rename": "Grove_12"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyPebble_purple.prefab",
+                "position": {
+                    "x": -205.107,
+                    "y": 58.871,
+                    "z": 21.745
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 69.348,
+                    "z": 0.0
+                },
+                "scale": 2.82,
+                "rename": "Grove_13"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyPebble_pink.prefab",
+                "position": {
+                    "x": -203.977,
+                    "y": 64.276,
+                    "z": 16.426
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 208.893,
+                    "z": 0.0
+                },
+                "scale": 4.01,
+                "rename": "Grove_14"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyPebble_red.prefab",
+                "position": {
+                    "x": -204.896,
+                    "y": 62.787,
+                    "z": 9.121
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 94.747,
+                    "z": 0.0
+                },
+                "scale": 4.19,
+                "rename": "Grove_15"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyPebble_blue.prefab",
+                "position": {
+                    "x": -205.031,
+                    "y": 62.972,
+                    "z": 2.145
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 232.446,
+                    "z": 0.0
+                },
+                "scale": 2.82,
+                "rename": "Grove_16"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyPebble_green.prefab",
+                "position": {
+                    "x": -205.365,
+                    "y": 61.694,
+                    "z": -5.175
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 27.626,
+                    "z": 0.0
+                },
+                "scale": 4.0,
+                "rename": "Grove_17"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyPebble_orange.prefab",
+                "position": {
+                    "x": -206.835,
+                    "y": 55.968,
+                    "z": -9.725
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 331.09,
+                    "z": 0.0
+                },
+                "scale": 3.34,
+                "rename": "Grove_18"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyPebble_purple.prefab",
+                "position": {
+                    "x": -208.462,
+                    "y": 49.192,
+                    "z": -11.474
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 34.633,
+                    "z": 0.0
+                },
+                "scale": 2.82,
+                "rename": "Grove_19"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyPebble_pink.prefab",
+                "position": {
+                    "x": -209.397,
+                    "y": 43.876,
+                    "z": -15.348
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 203.272,
+                    "z": 0.0
+                },
+                "scale": 4.3,
+                "rename": "Grove_20"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyPebble_green.prefab",
+                "position": {
+                    "x": -209.713,
+                    "y": 43.177,
+                    "z": 12.801
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 137.067,
+                    "z": 0.0
+                },
+                "scale": 0.82,
+                "rename": "Grove_21"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyPebble_orange.prefab",
+                "position": {
+                    "x": -207.747,
+                    "y": 49.198,
+                    "z": 20.701
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 100.621,
+                    "z": 0.0
+                },
+                "scale": 1.1,
+                "rename": "Grove_22"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyPebble_purple.prefab",
+                "position": {
+                    "x": -212.741,
+                    "y": 27.015,
+                    "z": 4.37
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 273.571,
+                    "z": 0.0
+                },
+                "scale": 0.88,
+                "rename": "Grove_23"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyPebble_pink.prefab",
+                "position": {
+                    "x": -208.998,
+                    "y": 48.063,
+                    "z": -4.173
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 283.396,
+                    "z": 0.0
+                },
+                "scale": 0.78,
+                "rename": "Grove_24"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyPebble_red.prefab",
+                "position": {
+                    "x": -211.294,
+                    "y": 36.881,
+                    "z": 1.546
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 116.024,
+                    "z": 0.0
+                },
+                "scale": 1.19,
+                "rename": "Grove_25"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyPebble_blue.prefab",
+                "position": {
+                    "x": -208.301,
+                    "y": 51.13,
+                    "z": 2.001
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 216.219,
+                    "z": 0.0
+                },
+                "scale": 1.15,
+                "rename": "Grove_26"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyPebble_green.prefab",
+                "position": {
+                    "x": -209.312,
+                    "y": 46.512,
+                    "z": -5.728
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 354.503,
+                    "z": 0.0
+                },
+                "scale": 0.72,
+                "rename": "Grove_27"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyPebble_orange.prefab",
+                "position": {
+                    "x": -211.055,
+                    "y": 33.428,
+                    "z": 18.6
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 330.84,
+                    "z": 0.0
+                },
+                "scale": 1.31,
+                "rename": "Grove_28"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyPebble_purple.prefab",
+                "position": {
+                    "x": -207.686,
+                    "y": 53.159,
+                    "z": 6.954
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 99.567,
+                    "z": 0.0
+                },
+                "scale": 0.71,
+                "rename": "Grove_29"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveTree_blue.prefab",
+                "position": {
+                    "x": -211.996,
+                    "y": 26.794,
+                    "z": 18.636
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 269.178,
+                    "z": 0.0
+                },
+                "scale": 0.9,
+                "rename": "Grove_30"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveTree_pink.prefab",
+                "position": {
+                    "x": -206.789,
+                    "y": 54.907,
+                    "z": 15.213
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 204.372,
+                    "z": 0.0
+                },
+                "scale": 0.92,
+                "rename": "Grove_31"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveTree_violet.prefab",
+                "position": {
+                    "x": -211.252,
+                    "y": 33.638,
+                    "z": 15.774
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 276.548,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Grove_32"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveTree_purple.prefab",
+                "position": {
+                    "x": -207.063,
+                    "y": 55.695,
+                    "z": 5.55
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 228.43,
+                    "z": 0.0
+                },
+                "scale": 1.16,
+                "rename": "Grove_33"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveTree_blue.prefab",
+                "position": {
+                    "x": -212.938,
+                    "y": 22.492,
+                    "z": 12.626
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 246.694,
+                    "z": 0.0
+                },
+                "scale": 1.23,
+                "rename": "Grove_34"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveTree_pink.prefab",
+                "position": {
+                    "x": -213.57,
+                    "y": 19.78,
+                    "z": 2.084
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 251.944,
+                    "z": 0.0
+                },
+                "scale": 0.85,
+                "rename": "Grove_35"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveTree_violet.prefab",
+                "position": {
+                    "x": -210.051,
+                    "y": 42.685,
+                    "z": -8.016
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 205.114,
+                    "z": 0.0
+                },
+                "scale": 0.94,
+                "rename": "Grove_36"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveTree_purple.prefab",
+                "position": {
+                    "x": -209.357,
+                    "y": 40.966,
+                    "z": 22.34
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 131.963,
+                    "z": 0.0
+                },
+                "scale": 1.09,
+                "rename": "Grove_37"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveTree_blue.prefab",
+                "position": {
+                    "x": -209.888,
+                    "y": 33.359,
+                    "z": 29.016
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 349.81,
+                    "z": 0.0
+                },
+                "scale": 0.93,
+                "rename": "Grove_38"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveTree_pink.prefab",
+                "position": {
+                    "x": -208.739,
+                    "y": 49.224,
+                    "z": -3.56
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 112.019,
+                    "z": 0.0
+                },
+                "scale": 1.24,
+                "rename": "Grove_39"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveTree_violet.prefab",
+                "position": {
+                    "x": -209.185,
+                    "y": 47.41,
+                    "z": 1.315
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 22.975,
+                    "z": 0.0
+                },
+                "scale": 0.97,
+                "rename": "Grove_40"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveTree_purple.prefab",
+                "position": {
+                    "x": -209.707,
+                    "y": 41.314,
+                    "z": 17.99
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 4.225,
+                    "z": 0.0
+                },
+                "scale": 0.86,
+                "rename": "Grove_41"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveTree_blue.prefab",
+                "position": {
+                    "x": -212.394,
+                    "y": 26.01,
+                    "z": 14.831
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 290.796,
+                    "z": 0.0
+                },
+                "scale": 0.99,
+                "rename": "Grove_42"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveTree_pink.prefab",
+                "position": {
+                    "x": -209.811,
+                    "y": 42.296,
+                    "z": 14.073
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 359.579,
+                    "z": 0.0
+                },
+                "scale": 1.13,
+                "rename": "Grove_43"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveTree_violet.prefab",
+                "position": {
+                    "x": -210.591,
+                    "y": 33.04,
+                    "z": 23.821
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 245.511,
+                    "z": 0.0
+                },
+                "scale": 1.18,
+                "rename": "Grove_44"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveTree_purple.prefab",
+                "position": {
+                    "x": -211.156,
+                    "y": 36.671,
+                    "z": -8.737
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 111.134,
+                    "z": 0.0
+                },
+                "scale": 1.12,
+                "rename": "Grove_45"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveTree_blue.prefab",
+                "position": {
+                    "x": -211.599,
+                    "y": 35.009,
+                    "z": -2.856
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 100.853,
+                    "z": 0.0
+                },
+                "scale": 1.16,
+                "rename": "Grove_46"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveTree_pink.prefab",
+                "position": {
+                    "x": -207.416,
+                    "y": 50.675,
+                    "z": 20.451
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 28.451,
+                    "z": 0.0
+                },
+                "scale": 1.09,
+                "rename": "Grove_47"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveTree_violet.prefab",
+                "position": {
+                    "x": -208.344,
+                    "y": 47.484,
+                    "z": 18.598
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 170.387,
+                    "z": 0.0
+                },
+                "scale": 0.94,
+                "rename": "Grove_48"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveTree_purple.prefab",
+                "position": {
+                    "x": -209.051,
+                    "y": 47.113,
+                    "z": 9.259
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 325.88,
+                    "z": 0.0
+                },
+                "scale": 1.19,
+                "rename": "Grove_49"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveTree_blue.prefab",
+                "position": {
+                    "x": -211.824,
+                    "y": 23.49,
+                    "z": 24.215
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 14.454,
+                    "z": 0.0
+                },
+                "scale": 1.17,
+                "rename": "Grove_50"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveTree_pink.prefab",
+                "position": {
+                    "x": -210.824,
+                    "y": 28.243,
+                    "z": 27.63
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 167.81,
+                    "z": 0.0
+                },
+                "scale": 0.93,
+                "rename": "Grove_51"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveGrassPatch.prefab",
+                "position": {
+                    "x": -206.745,
+                    "y": 48.919,
+                    "z": 29.518
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 199.652,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Grove_52"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveGrassPatch.prefab",
+                "position": {
+                    "x": -208.284,
+                    "y": 41.57,
+                    "z": 29.956
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 326.89,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Grove_53"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveGrassPatch.prefab",
+                "position": {
+                    "x": -209.598,
+                    "y": 34.365,
+                    "z": 29.922
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 143.234,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Grove_54"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveGrassPatch.prefab",
+                "position": {
+                    "x": -210.948,
+                    "y": 25.348,
+                    "z": 29.429
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 344.729,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Grove_55"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveGrassPatch.prefab",
+                "position": {
+                    "x": -205.505,
+                    "y": 58.071,
+                    "z": 20.078
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 341.972,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Grove_56"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveGrassPatch.prefab",
+                "position": {
+                    "x": -207.673,
+                    "y": 49.179,
+                    "z": 21.474
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 196.934,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Grove_57"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveGrassPatch.prefab",
+                "position": {
+                    "x": -209.176,
+                    "y": 41.925,
+                    "z": 22.26
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 94.946,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Grove_58"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveGrassPatch.prefab",
+                "position": {
+                    "x": -211.088,
+                    "y": 32.296,
+                    "z": 20.161
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 200.36,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Grove_59"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveGrassPatch.prefab",
+                "position": {
+                    "x": -211.745,
+                    "y": 26.545,
+                    "z": 21.614
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 266.502,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Grove_60"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveGrassPatch.prefab",
+                "position": {
+                    "x": -212.689,
+                    "y": 18.203,
+                    "z": 20.968
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 200.935,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Grove_61"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveGrassPatch.prefab",
+                "position": {
+                    "x": -206.616,
+                    "y": 56.138,
+                    "z": 12.891
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 23.419,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Grove_62"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveGrassPatch.prefab",
+                "position": {
+                    "x": -208.318,
+                    "y": 49.259,
+                    "z": 13.594
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 315.411,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Grove_63"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveGrassPatch.prefab",
+                "position": {
+                    "x": -209.829,
+                    "y": 42.547,
+                    "z": 13.005
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 111.141,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Grove_64"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveGrassPatch.prefab",
+                "position": {
+                    "x": -211.273,
+                    "y": 33.63,
+                    "z": 15.507
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 111.544,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Grove_65"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveGrassPatch.prefab",
+                "position": {
+                    "x": -212.298,
+                    "y": 26.403,
+                    "z": 15.503
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 14.796,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Grove_66"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveGrassPatch.prefab",
+                "position": {
+                    "x": -213.149,
+                    "y": 19.745,
+                    "z": 13.62
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 155.473,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Grove_67"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveGrassPatch.prefab",
+                "position": {
+                    "x": -207.011,
+                    "y": 55.769,
+                    "z": 6.648
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 283.107,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Grove_68"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveGrassPatch.prefab",
+                "position": {
+                    "x": -208.654,
+                    "y": 49.347,
+                    "z": 5.997
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 226.707,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Grove_69"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveGrassPatch.prefab",
+                "position": {
+                    "x": -210.471,
+                    "y": 41.071,
+                    "z": 4.766
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 320.434,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Grove_70"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveGrassPatch.prefab",
+                "position": {
+                    "x": -211.903,
+                    "y": 32.984,
+                    "z": 4.108
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 9.677,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Grove_71"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveGrassPatch.prefab",
+                "position": {
+                    "x": -212.86,
+                    "y": 25.878,
+                    "z": 5.343
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 2.411,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Grove_72"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveGrassPatch.prefab",
+                "position": {
+                    "x": -213.732,
+                    "y": 17.403,
+                    "z": 4.867
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 315.783,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Grove_73"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveGrassPatch.prefab",
+                "position": {
+                    "x": -206.684,
+                    "y": 57.231,
+                    "z": -3.746
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 21.771,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Grove_74"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveGrassPatch.prefab",
+                "position": {
+                    "x": -208.466,
+                    "y": 50.37,
+                    "z": -3.546
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 100.294,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Grove_75"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveGrassPatch.prefab",
+                "position": {
+                    "x": -210.213,
+                    "y": 42.425,
+                    "z": -4.293
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 311.615,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Grove_76"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveGrassPatch.prefab",
+                "position": {
+                    "x": -211.895,
+                    "y": 33.255,
+                    "z": -1.502
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 134.607,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Grove_77"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveGrassPatch.prefab",
+                "position": {
+                    "x": -212.889,
+                    "y": 26.123,
+                    "z": -1.886
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 336.39,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Grove_78"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveGrassPatch.prefab",
+                "position": {
+                    "x": -213.79,
+                    "y": 17.021,
+                    "z": -3.42
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 89.36,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Grove_79"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveGrassPatch.prefab",
+                "position": {
+                    "x": -208.871,
+                    "y": 47.579,
+                    "z": -10.803
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 116.061,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Grove_80"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveGrassPatch.prefab",
+                "position": {
+                    "x": -209.977,
+                    "y": 42.411,
+                    "z": -10.902
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 285.577,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Grove_81"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveGrassPatch.prefab",
+                "position": {
+                    "x": -211.576,
+                    "y": 33.451,
+                    "z": -11.155
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 18.682,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Grove_82"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveGrassPatch.prefab",
+                "position": {
+                    "x": -212.622,
+                    "y": 25.963,
+                    "z": -11.198
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 129.336,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Grove_83"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GroveTree_violet.prefab",
+                "position": {
+                    "x": -207.737,
+                    "y": 53.048,
+                    "z": 6.253
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "scale": 1.35,
+                "rename": "Grove_84"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyPebble_purple.prefab",
+                "position": {
+                    "x": -207.336,
+                    "y": 54.772,
+                    "z": 4.442
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 58.698,
+                    "z": 0.0
+                },
+                "scale": 1.1,
+                "rename": "Grove_85"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Ruin_BlockBroken.prefab",
+                "position": {
+                    "x": 211.212,
+                    "y": -12.884,
+                    "z": 31.184
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 90.0,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Ruins_0"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Mint_Half.prefab",
+                "position": {
+                    "x": 211.898,
+                    "y": -12.951,
+                    "z": 33.308
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": -38.0
+                },
+                "scale": 1.1,
+                "rename": "Ruins_1"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Ruin_Rubble.prefab",
+                "position": {
+                    "x": 210.596,
+                    "y": -14.388,
+                    "z": 34.514
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 159.711,
+                    "z": 0.0
+                },
+                "scale": 0.8,
+                "rename": "Ruins_2"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Ruin_Rubble.prefab",
+                "position": {
+                    "x": 210.816,
+                    "y": -11.201,
+                    "z": 34.351
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 204.657,
+                    "z": 0.0
+                },
+                "scale": 0.8,
+                "rename": "Ruins_3"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Ruin_Rubble.prefab",
+                "position": {
+                    "x": 210.85,
+                    "y": -15.474,
+                    "z": 32.435
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 326.917,
+                    "z": 0.0
+                },
+                "scale": 0.8,
+                "rename": "Ruins_4"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Mint_Shard.prefab",
+                "position": {
+                    "x": 210.536,
+                    "y": -13.296,
+                    "z": 35.313
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 91.53,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Ruins_5"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Ruin_BlockBroken.prefab",
+                "position": {
+                    "x": 206.817,
+                    "y": -4.916,
+                    "z": 54.329
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 211.961,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Ruins_6"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Ruin_Block.prefab",
+                "position": {
+                    "x": 206.984,
+                    "y": -9.909,
+                    "z": 52.996
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 272.295,
+                    "z": 0.0
+                },
+                "scale": 1.14,
+                "rename": "Ruins_7"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Ruin_BlockBroken.prefab",
+                "position": {
+                    "x": 208.676,
+                    "y": -14.902,
+                    "z": 44.512
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 195.501,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Ruins_8"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Ruin_Block.prefab",
+                "position": {
+                    "x": 209.748,
+                    "y": -13.564,
+                    "z": 39.633
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 185.798,
+                    "z": 0.0
+                },
+                "scale": 1.08,
+                "rename": "Ruins_9"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Ruin_BlockBroken.prefab",
+                "position": {
+                    "x": 210.985,
+                    "y": -4.916,
+                    "z": 34.79
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 87.14,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Ruins_10"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Ruin_Block.prefab",
+                "position": {
+                    "x": 209.744,
+                    "y": 3.726,
+                    "z": 39.642
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 15.744,
+                    "y": 40.651,
+                    "z": 0.0
+                },
+                "scale": 1.1,
+                "rename": "Ruins_11"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Ruin_BlockBroken.prefab",
+                "position": {
+                    "x": 209.126,
+                    "y": 5.071,
+                    "z": 44.607
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 123.404,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Ruins_12"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Ruin_Block.prefab",
+                "position": {
+                    "x": 208.053,
+                    "y": 3.733,
+                    "z": 49.486
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 278.144,
+                    "z": 0.0
+                },
+                "scale": 1.01,
+                "rename": "Ruins_13"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Ruin_Block.prefab",
+                "position": {
+                    "x": 206.821,
+                    "y": 0.077,
+                    "z": 52.945
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 27.055,
+                    "y": 7.415,
+                    "z": 0.0
+                },
+                "scale": 1.1,
+                "rename": "Ruins_14"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Ruin_Block.prefab",
+                "position": {
+                    "x": 209.905,
+                    "y": -3.941,
+                    "z": 46.315
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 90.0,
+                    "y": 35.0,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Ruins_15"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Cane_Arch.prefab",
+                "position": {
+                    "x": 209.101,
+                    "y": 12.995,
+                    "z": 40.537
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 189.423,
+                    "z": 0.0
+                },
+                "scale": 1.2,
+                "rename": "Ruins_16"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Cane_Arch.prefab",
+                "position": {
+                    "x": 204.8,
+                    "y": -10.863,
+                    "z": 58.943
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 155.511,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Ruins_17"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Cane_Arch.prefab",
+                "position": {
+                    "x": 206.532,
+                    "y": -23.762,
+                    "z": 48.118
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 144.41,
+                    "z": 0.0
+                },
+                "scale": 0.9,
+                "rename": "Ruins_18"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Cane_Stub.prefab",
+                "position": {
+                    "x": 209.203,
+                    "y": -25.481,
+                    "z": 34.721
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": -14.522,
+                    "y": 89.115,
+                    "z": -12.444
+                },
+                "scale": 1.0,
+                "rename": "Ruins_19"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Cane_Stub.prefab",
+                "position": {
+                    "x": 204.399,
+                    "y": -20.588,
+                    "z": 58.464
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": -11.684,
+                    "y": 193.571,
+                    "z": -10.211
+                },
+                "scale": 1.2,
+                "rename": "Ruins_20"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Cane_Stub.prefab",
+                "position": {
+                    "x": 206.04,
+                    "y": -14.785,
+                    "z": 54.309
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 13.245,
+                    "y": 249.374,
+                    "z": 0.723
+                },
+                "scale": 1.22,
+                "rename": "Ruins_21"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Cane_Stub.prefab",
+                "position": {
+                    "x": 205.675,
+                    "y": 9.778,
+                    "z": 56.772
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 1.92,
+                    "y": 241.652,
+                    "z": 6.772
+                },
+                "scale": 1.29,
+                "rename": "Ruins_22"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Cane_Stub.prefab",
+                "position": {
+                    "x": 206.095,
+                    "y": 14.781,
+                    "z": 54.103
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": -10.029,
+                    "y": 268.9,
+                    "z": -18.372
+                },
+                "scale": 0.84,
+                "rename": "Ruins_23"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Cane_Stub.prefab",
+                "position": {
+                    "x": 206.092,
+                    "y": -0.157,
+                    "z": 56.097
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 10.485,
+                    "y": 206.745,
+                    "z": -1.779
+                },
+                "scale": 1.23,
+                "rename": "Ruins_24"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Cane_Stub.prefab",
+                "position": {
+                    "x": 209.611,
+                    "y": 0.119,
+                    "z": 41.039
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 6.475,
+                    "y": 57.71,
+                    "z": 9.723
+                },
+                "scale": 1.23,
+                "rename": "Ruins_25"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Cane_Stub.prefab",
+                "position": {
+                    "x": 208.681,
+                    "y": 18.125,
+                    "z": 41.766
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": -23.998,
+                    "y": 52.381,
+                    "z": 7.529
+                },
+                "scale": 1.07,
+                "rename": "Ruins_26"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Cane_Hook.prefab",
+                "position": {
+                    "x": 210.161,
+                    "y": -4.448,
+                    "z": 41.108
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 88.0,
+                    "y": 90.418,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Ruins_27"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Cane_Hook.prefab",
+                "position": {
+                    "x": 211.733,
+                    "y": 0.25,
+                    "z": 32.347
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 88.0,
+                    "y": 335.504,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Ruins_28"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Cane_Hook.prefab",
+                "position": {
+                    "x": 208.719,
+                    "y": -18.751,
+                    "z": 44.295
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 88.0,
+                    "y": 245.853,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Ruins_29"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Cane_Hook.prefab",
+                "position": {
+                    "x": 212.622,
+                    "y": -7.151,
+                    "z": 24.861
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 88.0,
+                    "y": 322.332,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Ruins_30"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Mint_Whole.prefab",
+                "position": {
+                    "x": 207.815,
+                    "y": 18.186,
+                    "z": 46.781
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 4.803,
+                    "y": 136.61,
+                    "z": 0.0
+                },
+                "scale": 1.27,
+                "rename": "Ruins_31"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Mint_Whole.prefab",
+                "position": {
+                    "x": 212.474,
+                    "y": 11.294,
+                    "z": 27.077
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 90.0,
+                    "y": 50.336,
+                    "z": 0.0
+                },
+                "scale": 1.35,
+                "rename": "Ruins_32"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Mint_Half.prefab",
+                "position": {
+                    "x": 208.063,
+                    "y": -11.82,
+                    "z": 48.157
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": -5.991,
+                    "y": 108.19,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Ruins_33"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Mint_Whole.prefab",
+                "position": {
+                    "x": 204.365,
+                    "y": 3.452,
+                    "z": 62.685
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 3.396,
+                    "y": 334.309,
+                    "z": 0.0
+                },
+                "scale": 1.19,
+                "rename": "Ruins_34"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Mint_Whole.prefab",
+                "position": {
+                    "x": 211.083,
+                    "y": 9.363,
+                    "z": 36.909
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 90.0,
+                    "y": 198.506,
+                    "z": 0.0
+                },
+                "scale": 1.01,
+                "rename": "Ruins_35"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Mint_Half.prefab",
+                "position": {
+                    "x": 208.174,
+                    "y": 0.148,
+                    "z": 49.119
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 11.747,
+                    "y": 87.171,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Ruins_36"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Mint_Whole.prefab",
+                "position": {
+                    "x": 204.144,
+                    "y": -24.528,
+                    "z": 58.565
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": -9.16,
+                    "y": 207.561,
+                    "z": 0.0
+                },
+                "scale": 1.02,
+                "rename": "Ruins_37"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Mint_Whole.prefab",
+                "position": {
+                    "x": 205.293,
+                    "y": -2.609,
+                    "z": 62.08
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 90.0,
+                    "y": 73.69,
+                    "z": 0.0
+                },
+                "scale": 1.34,
+                "rename": "Ruins_38"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Mint_Half.prefab",
+                "position": {
+                    "x": 206.725,
+                    "y": -18.484,
+                    "z": 51.693
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.774,
+                    "y": 121.864,
+                    "z": 0.0
+                },
+                "scale": 1.0,
+                "rename": "Ruins_39"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Mint_Whole.prefab",
+                "position": {
+                    "x": 212.562,
+                    "y": -2.144,
+                    "z": 22.781
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 8.095,
+                    "y": 70.947,
+                    "z": 0.0
+                },
+                "scale": 0.96,
+                "rename": "Ruins_40"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Mint_Shard.prefab",
+                "position": {
+                    "x": 212.709,
+                    "y": 4.655,
+                    "z": 21.963
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": -9.287,
+                    "y": 117.209,
+                    "z": 9.266
+                },
+                "scale": 0.88,
+                "rename": "Ruins_41"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Mint_Shard.prefab",
+                "position": {
+                    "x": 211.573,
+                    "y": 9.745,
+                    "z": 29.849
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": -15.179,
+                    "y": 181.281,
+                    "z": 4.89
+                },
+                "scale": 1.09,
+                "rename": "Ruins_42"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Mint_Shard.prefab",
+                "position": {
+                    "x": 210.006,
+                    "y": -20.753,
+                    "z": 34.868
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 13.218,
+                    "y": 268.431,
+                    "z": -7.371
+                },
+                "scale": 1.0,
+                "rename": "Ruins_43"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Mint_Shard.prefab",
+                "position": {
+                    "x": 208.421,
+                    "y": -15.874,
+                    "z": 45.36
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": -5.747,
+                    "y": 307.0,
+                    "z": 4.108
+                },
+                "scale": 1.06,
+                "rename": "Ruins_44"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Mint_Shard.prefab",
+                "position": {
+                    "x": 210.452,
+                    "y": -17.008,
+                    "z": 34.199
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 19.244,
+                    "y": 17.93,
+                    "z": 2.158
+                },
+                "scale": 0.71,
+                "rename": "Ruins_45"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Mint_Shard.prefab",
+                "position": {
+                    "x": 209.842,
+                    "y": -11.453,
+                    "z": 39.803
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": -6.566,
+                    "y": 149.524,
+                    "z": 18.008
+                },
+                "scale": 1.01,
+                "rename": "Ruins_46"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Mint_Shard.prefab",
+                "position": {
+                    "x": 210.925,
+                    "y": -19.541,
+                    "z": 29.625
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 8.835,
+                    "y": 110.704,
+                    "z": -10.711
+                },
+                "scale": 1.16,
+                "rename": "Ruins_47"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Mint_Shard.prefab",
+                "position": {
+                    "x": 211.04,
+                    "y": -4.771,
+                    "z": 34.475
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 14.315,
+                    "y": 263.981,
+                    "z": 12.603
+                },
+                "scale": 0.7,
+                "rename": "Ruins_48"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Mint_Shard.prefab",
+                "position": {
+                    "x": 209.546,
+                    "y": -22.541,
+                    "z": 36.491
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": -0.048,
+                    "y": 22.809,
+                    "z": -11.972
+                },
+                "scale": 1.07,
+                "rename": "Ruins_49"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Mint_Shard.prefab",
+                "position": {
+                    "x": 207.825,
+                    "y": 15.886,
+                    "z": 48.016
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": -19.182,
+                    "y": 316.044,
+                    "z": 10.892
+                },
+                "scale": 0.94,
+                "rename": "Ruins_50"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Mint_Shard.prefab",
+                "position": {
+                    "x": 204.036,
+                    "y": -21.527,
+                    "z": 60.454
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 13.104,
+                    "y": 263.002,
+                    "z": -11.196
+                },
+                "scale": 1.01,
+                "rename": "Ruins_51"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Mint_Shard.prefab",
+                "position": {
+                    "x": 206.701,
+                    "y": -7.097,
+                    "z": 54.529
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 8.142,
+                    "y": 68.636,
+                    "z": -19.714
+                },
+                "scale": 0.88,
+                "rename": "Ruins_52"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Mint_Shard.prefab",
+                "position": {
+                    "x": 209.249,
+                    "y": -23.774,
+                    "z": 37.399
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": -5.61,
+                    "y": 127.951,
+                    "z": -6.45
+                },
+                "scale": 0.91,
+                "rename": "Ruins_53"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyCorn.prefab",
+                "position": {
+                    "x": 209.065,
+                    "y": -20.891,
+                    "z": 40.057
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 14.285,
+                    "z": 0.0
+                },
+                "scale": 1.5,
+                "rename": "Ruins_54"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyCorn.prefab",
+                "position": {
+                    "x": 210.61,
+                    "y": 15.163,
+                    "z": 37.103
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 85.0,
+                    "y": 127.62,
+                    "z": 0.0
+                },
+                "scale": 1.05,
+                "rename": "Ruins_55"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyCorn.prefab",
+                "position": {
+                    "x": 207.615,
+                    "y": -4.982,
+                    "z": 51.186
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 7.203,
+                    "z": 0.0
+                },
+                "scale": 1.28,
+                "rename": "Ruins_56"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyCorn.prefab",
+                "position": {
+                    "x": 210.84,
+                    "y": -5.531,
+                    "z": 38.459
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 85.0,
+                    "y": 114.502,
+                    "z": 0.0
+                },
+                "scale": 0.86,
+                "rename": "Ruins_57"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyCorn.prefab",
+                "position": {
+                    "x": 208.888,
+                    "y": -3.028,
+                    "z": 45.888
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 57.428,
+                    "z": 0.0
+                },
+                "scale": 1.23,
+                "rename": "Ruins_58"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CandyCorn.prefab",
+                "position": {
+                    "x": 208.2,
+                    "y": -19.482,
+                    "z": 47.292
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 85.0,
+                    "y": 171.13,
+                    "z": 0.0
+                },
+                "scale": 0.97,
+                "rename": "Ruins_59"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Ruin_Rubble.prefab",
+                "position": {
+                    "x": 209.398,
+                    "y": -11.007,
+                    "z": 42.194
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 145.341,
+                    "z": 0.0
+                },
+                "scale": 1.37,
+                "rename": "Ruins_60"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Ruin_Rubble.prefab",
+                "position": {
+                    "x": 207.38,
+                    "y": -5.442,
+                    "z": 52.086
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 61.192,
+                    "z": 0.0
+                },
+                "scale": 0.88,
+                "rename": "Ruins_61"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Ruin_Rubble.prefab",
+                "position": {
+                    "x": 210.802,
+                    "y": -9.488,
+                    "z": 34.952
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 262.801,
+                    "z": 0.0
+                },
+                "scale": 1.18,
+                "rename": "Ruins_62"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Ruin_Rubble.prefab",
+                "position": {
+                    "x": 209.07,
+                    "y": -11.241,
+                    "z": 43.73
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 132.756,
+                    "z": 0.0
+                },
+                "scale": 0.97,
+                "rename": "Ruins_63"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Ruin_Rubble.prefab",
+                "position": {
+                    "x": 208.903,
+                    "y": -13.171,
+                    "z": 43.988
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 33.388,
+                    "z": 0.0
+                },
+                "scale": 1.36,
+                "rename": "Ruins_64"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Ruin_Rubble.prefab",
+                "position": {
+                    "x": 208.194,
+                    "y": 6.843,
+                    "z": 48.554
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 292.309,
+                    "z": 0.0
+                },
+                "scale": 1.14,
+                "rename": "Ruins_65"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Ruin_Rubble.prefab",
+                "position": {
+                    "x": 212.199,
+                    "y": -11.469,
+                    "z": 24.268
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 236.947,
+                    "z": 0.0
+                },
+                "scale": 0.96,
+                "rename": "Ruins_66"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Ruin_Rubble.prefab",
+                "position": {
+                    "x": 206.358,
+                    "y": -8.913,
+                    "z": 55.552
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 280.402,
+                    "z": 0.0
+                },
+                "scale": 0.92,
+                "rename": "Ruins_67"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Ruin_Rubble.prefab",
+                "position": {
+                    "x": 206.718,
+                    "y": 15.126,
+                    "z": 52.801
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 146.452,
+                    "z": 0.0
+                },
+                "scale": 1.12,
+                "rename": "Ruins_68"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Ruin_Rubble.prefab",
+                "position": {
+                    "x": 211.746,
+                    "y": -9.819,
+                    "z": 28.568
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 113.107,
+                    "z": 0.0
+                },
+                "scale": 1.31,
+                "rename": "Ruins_69"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Ruin_Rubble.prefab",
+                "position": {
+                    "x": 206.121,
+                    "y": -2.799,
+                    "z": 57.056
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 9.083,
+                    "z": 0.0
+                },
+                "scale": 1.16,
+                "rename": "Ruins_70"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Ruin_Rubble.prefab",
+                "position": {
+                    "x": 207.653,
+                    "y": -20.608,
+                    "z": 46.952
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 110.92,
+                    "z": 0.0
+                },
+                "scale": 1.26,
+                "rename": "Ruins_71"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Ruin_Rubble.prefab",
+                "position": {
+                    "x": 210.297,
+                    "y": -2.405,
+                    "z": 38.969
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 227.493,
+                    "z": 0.0
+                },
+                "scale": 0.86,
+                "rename": "Ruins_72"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Ruin_Rubble.prefab",
+                "position": {
+                    "x": 211.744,
+                    "y": 1.434,
+                    "z": 30.192
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 146.926,
+                    "z": 0.0
+                },
+                "scale": 0.86,
+                "rename": "Ruins_73"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Ruin_Rubble.prefab",
+                "position": {
+                    "x": 211.949,
+                    "y": 9.475,
+                    "z": 27.142
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 299.813,
+                    "z": 0.0
+                },
+                "scale": 0.91,
+                "rename": "Ruins_74"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Ruin_Rubble.prefab",
+                "position": {
+                    "x": 208.99,
+                    "y": -1.565,
+                    "z": 45.495
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 332.244,
+                    "z": 0.0
+                },
+                "scale": 1.22,
+                "rename": "Ruins_75"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Ruin_Rubble.prefab",
+                "position": {
+                    "x": 211.135,
+                    "y": 0.788,
+                    "z": 34.213
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 157.744,
+                    "z": 0.0
+                },
+                "scale": 1.21,
+                "rename": "Ruins_76"
+            },
+            {
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/Ruin_Rubble.prefab",
+                "position": {
+                    "x": 212.149,
+                    "y": 0.157,
+                    "z": 27.238
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 78.427,
+                    "z": 0.0
+                },
+                "scale": 0.99,
+                "rename": "Ruins_77"
+            },
+            {
+                "rename": "CakeVolcano",
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/CakeVolcano.prefab",
+                "position": {
+                    "x": 0.0,
+                    "y": -218.685,
+                    "z": 0.0
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "keepLoaded": true
+            },
+            {
+                "rename": "GumdropCave",
+                "assetBundle": "planets/candyland/candy",
+                "path": "Assets/Candy/Prefabs/GumdropCave.prefab",
+                "position": {
+                    "x": -9.727,
+                    "y": 0.336,
+                    "z": -218.519
+                },
+                "alignRadial": true,
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "keepLoaded": true
+            }
+        ],
+        "signals": [
+            {
+                "name": "Heart Tablet",
+                "frequency": "Candy Tablets",
+                "audio": "planets/candyland/sfx/tablet_red.wav",
+                "position": {
+                    "x": -208.138,
+                    "y": 55.516,
+                    "z": 5.859
+                },
+                "sourceRadius": 1,
+                "identificationRadius": 8,
+                "detectionRadius": 400,
+                "onlyAudibleToScope": true,
+                "maxDistance": 1500
+            },
+            {
+                "name": "Star Tablet",
+                "frequency": "Candy Tablets",
+                "audio": "planets/candyland/sfx/tablet_yellow.wav",
+                "position": {
+                    "x": 211.925,
+                    "y": -12.751,
+                    "z": 33.211
+                },
+                "sourceRadius": 1,
+                "identificationRadius": 8,
+                "detectionRadius": 400,
+                "onlyAudibleToScope": true,
+                "maxDistance": 1500
+            },
+            {
+                "name": "Chocolate Tablet",
+                "frequency": "Candy Tablets",
+                "audio": "planets/candyland/sfx/tablet_blue.wav",
+                "position": {
+                    "x": 0.0,
+                    "y": -221.155,
+                    "z": 0.0
+                },
+                "sourceRadius": 1,
+                "identificationRadius": 8,
+                "detectionRadius": 400,
+                "onlyAudibleToScope": true,
+                "maxDistance": 1500
+            },
+            {
+                "name": "Sweetie Tablet",
+                "frequency": "Candy Tablets",
+                "audio": "planets/candyland/sfx/tablet_green.wav",
+                "position": {
+                    "x": -9.821,
+                    "y": 0.339,
+                    "z": -220.617
+                },
+                "sourceRadius": 1,
+                "identificationRadius": 8,
+                "detectionRadius": 400,
+                "onlyAudibleToScope": true,
+                "maxDistance": 1500
+            }
+        ],
+        "campfires": [
+            {
+                "position": {
+                    "x": 2.6,
+                    "y": 213.135,
+                    "z": 2.6
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "alignRadial": false,
+                "canSleepHere": true
+            }
+        ],
+        "translatorText": [
+            {
+                "rename": "CandyHouse_WallText",
+                "type": "wall",
+                "xmlFile": "planets/candyland/text/house_wall.xml",
+                "position": {
+                    "x": 0.0,
+                    "y": 221.535,
+                    "z": -6.3
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "alignRadial": false,
+                "normal": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 1.0
+                },
+                "seed": 7,
+                "arcInfo": [
+                    {
+                        "type": "adult",
+                        "position": {
+                            "x": -1.541,
+                            "y": -0.465
+                        },
+                        "zRotation": 115.0,
+                        "mirror": false
+                    },
+                    {
+                        "type": "adult",
+                        "position": {
+                            "x": -1.587,
+                            "y": 0.394
+                        },
+                        "zRotation": 69.0,
+                        "mirror": false
+                    },
+                    {
+                        "type": "adult",
+                        "position": {
+                            "x": -0.664,
+                            "y": 1.013
+                        },
+                        "zRotation": 23.0,
+                        "mirror": false
+                    },
+                    {
+                        "type": "adult",
+                        "position": {
+                            "x": 0.664,
+                            "y": 1.013
+                        },
+                        "zRotation": 337.0,
+                        "mirror": false
+                    },
+                    {
+                        "type": "adult",
+                        "position": {
+                            "x": 1.587,
+                            "y": 0.394
+                        },
+                        "zRotation": 291.0,
+                        "mirror": false
+                    },
+                    {
+                        "type": "adult",
+                        "position": {
+                            "x": 1.541,
+                            "y": -0.465
+                        },
+                        "zRotation": 245.0,
+                        "mirror": false
+                    }
+                ]
+            },
+            {
+                "rename": "CandyVault_CreatorText",
+                "type": "wall",
+                "xmlFile": "planets/candyland/text/vault_creator.xml",
+                "position": {
+                    "x": 0.0,
+                    "y": 215.935,
+                    "z": -4.4
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "alignRadial": false,
+                "normal": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 1.0
+                },
+                "arcInfo": [
+                    {
+                        "type": "adult",
+                        "position": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "zRotation": 0,
+                        "mirror": false
+                    }
+                ]
+            }
+        ]
+    }
+}
